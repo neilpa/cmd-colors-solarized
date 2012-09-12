@@ -8,9 +8,10 @@ Windows Registry Editor Version 5.00
 ; Solarized color table from http://ethanschoonover.com/solarized.
 ;
 
+[HKEY_CURRENT_USER\Console]
+
 ; SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      sRGB        HSB
 ; --------- ------- ---- -------  ----------- ---------- ----------- -----------
-[HKEY_CURRENT_USER\Console]
 ; base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
 "ColorTable08"=dword:00362b00
 ; base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
@@ -22,25 +23,25 @@ Windows Registry Editor Version 5.00
 ; base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
 "ColorTable12"=dword:00969483
 ; base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
-"ColorTable14"=dword:0093a1a1
+"ColorTable14"=dword:00a1a193
 ; base2     #eee8d5  7/7 white    254 #d7d7af 92 -00  10 238 232 213  44  11  93
-"ColorTable07"=dword:00eee8d5
+"ColorTable07"=dword:00d5e8ee
 ; base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
-"ColorTable15"=dword:00fdf6e3
+"ColorTable15"=dword:00e3f6fd
 ; yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
 "ColorTable03"=dword:00b58900
 ; orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
-"ColorTable09"=dword:00cb4b16
+"ColorTable09"=dword:00164bcb
 ; red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
-"ColorTable01"=dword:00dc322f
+"ColorTable01"=dword:002f32dc
 ; magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
-"ColorTable05"=dword:00d33682
+"ColorTable05"=dword:008236d3
 ; violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
-"ColorTable13"=dword:006c71c4
+"ColorTable13"=dword:00c4716c
 ; blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
-"ColorTable04"=dword:00268bd2
+"ColorTable04"=dword:00d28b26
 ; cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
-"ColorTable06"=dword:002aa198
+"ColorTable06"=dword:0098a12a
 ; green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 "ColorTable02"=dword:00009985
 
