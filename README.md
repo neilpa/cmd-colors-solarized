@@ -14,10 +14,9 @@ Installation
 
 Import the `.reg` file of choice, e.g. `regedit /s solarized-dark.reg`.
 
-These files both contain the same color palette, the only difference is
-the default background and foreground colors. Therefore you can switch
-between themes on the fly with `color 8C` for dark and `color FE` for
-light
+Both files contain the same palettes, the only difference is the default
+foreground and background colors. Therefore you can switch between themes
+on the fly with `color 8C` for dark and `color FB` for light.
 
 Screenshots
 ------------

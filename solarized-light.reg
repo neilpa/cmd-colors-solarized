@@ -9,6 +9,8 @@ Windows Registry Editor Version 5.00
 ;
 
 [HKEY_CURRENT_USER\Console]
+"ScreenColors"=dword:000000fb
+"PopupColors"=dword:0000008c
 
 ; SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      sRGB        HSB
 ; --------- ------- ---- -------  ----------- ---------- ----------- -----------
