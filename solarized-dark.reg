@@ -29,7 +29,7 @@ Windows Registry Editor Version 5.00
 ; base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
 "ColorTable15"=dword:00e3f6fd
 ; yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
-"ColorTable03"=dword:00b58900
+"ColorTable03"=dword:000089b5
 ; orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
 "ColorTable09"=dword:00164bcb
 ; red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
