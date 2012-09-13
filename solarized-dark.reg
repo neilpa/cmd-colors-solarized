@@ -2,48 +2,47 @@ Windows Registry Editor Version 5.00
 
 ;
 ; Registry file that maps the solarized palette to the 16 avaliable colors
-; in a windows command prompt. Note, hex values in the table are RBG but byte
-; ordering of a DWORD is BGR, e.g. "ColorTable<16>"=dword:00<B><G><R>
+; in a Windows command prompt. Note, hex values in the table are RBG but byte
+; ordering of a DWORD is BGR, e.g. "ColorTable<##>"=dword:00<B><G><R>
 ;
 ; Solarized color table from http://ethanschoonover.com/solarized.
 ;
+; NR  cmd.exe      PowerShell   SOLARIZED  HEX      DWORD
+; --  -------      -----------  ---------  -------  --------
+; 00  Black        Black        base02     #073642  00423607
+; 01  Blue         DarkBlue     base0      #839496  00969483
+; 02  Green        DarkGreen    base01     #586e75  00756e58
+; 03  Aqua         DarkCyan     base1      #93a1a1  00a1a193
+; 04  Red          DarkRed      orange     #cb4b16  00164bcb
+; 05  Purple       DarkMagenta  violet     #6c71c4  00c4716c
+; 06  Yellow       DarkYellow   base00     #657b83  00837b65
+; 07  White        Gray         base2      #eee8d5  00d5e8ee
+; 08  Gray         DarkGray     base03     #002b36  00362b00
+; 09  LightBlue    Blue         blue       #268bd2  00d28b26
+; 10  LightGreen   Green        green      #859900  00009985
+; 11  LightAqua    Cyan         cyan       #2aa198  0098a12a
+; 12  LightRed     Red          red        #dc322f  002f32dc
+; 13  LightPurple  Magenta      magenta    #d33682  008236d3
+; 14  LightYellow  Yellow       yellow     #b58900  000089b5
+; 15  BrightWhite  White        base3      #fdf6e3  00e3f6fd
+;
 
 [HKEY_CURRENT_USER\Console]
-"ScreenColors"=dword:0000008c
-"PopupColors"=dword:000000fb
-
-; SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      sRGB        HSB
-; --------- ------- ---- -------  ----------- ---------- ----------- -----------
-; base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
-"ColorTable08"=dword:00362b00
-; base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
 "ColorTable00"=dword:00423607
-; base01    #586e75 10/7 brgreen  240 #4e4e4e 45 -07 -07  88 110 117 194  25  46
-"ColorTable10"=dword:00756e58
-; base00    #657b83 11/7 bryellow 241 #585858 50 -07 -07 101 123 131 195  23  51
-"ColorTable11"=dword:00837b65
-; base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
-"ColorTable12"=dword:00969483
-; base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
-"ColorTable14"=dword:00a1a193
-; base2     #eee8d5  7/7 white    254 #d7d7af 92 -00  10 238 232 213  44  11  93
+"ColorTable01"=dword:00969483
+"ColorTable02"=dword:00756e58
+"ColorTable03"=dword:00a1a193
+"ColorTable04"=dword:00164bcb
+"ColorTable05"=dword:00c4716c
+"ColorTable06"=dword:00837b65
 "ColorTable07"=dword:00d5e8ee
-; base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
+"ColorTable08"=dword:00362b00
+"ColorTable09"=dword:00d28b26
+"ColorTable10"=dword:00009985
+"ColorTable11"=dword:0098a12a
+"ColorTable12"=dword:002f32dc
+"ColorTable13"=dword:008236d3
+"ColorTable14"=dword:000089b5
 "ColorTable15"=dword:00e3f6fd
-; yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
-"ColorTable03"=dword:000089b5
-; orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
-"ColorTable09"=dword:00164bcb
-; red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
-"ColorTable01"=dword:002f32dc
-; magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
-"ColorTable05"=dword:008236d3
-; violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
-"ColorTable13"=dword:00c4716c
-; blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
-"ColorTable04"=dword:00d28b26
-; cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
-"ColorTable06"=dword:0098a12a
-; green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
-"ColorTable02"=dword:00009985
-
+"ScreenColors"=dword:00000081
+"PopupColors"=dword:000000f6
