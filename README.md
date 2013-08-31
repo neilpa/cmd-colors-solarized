@@ -28,6 +28,11 @@ each to "White"/"Black" for light/dark respectively should do the trick, e.g.
     $Host.PrivateData.DebugBackgroundColor = "Black"
     $Host.PrivateData.ErrorBackgroundColor = "Black"
 
+__Note:__ the files `solarized-dark.reg` and `solarized-light.reg` are
+incompatible with command-line applications that use the Solarized
+palette (such as VIM). For correct colors, import either
+`solarized-dark-compatible.reg` or `solarized-light-compatible.reg`.
+
 Screenshots
 ------------
 
