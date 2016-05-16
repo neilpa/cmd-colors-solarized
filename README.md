@@ -18,7 +18,7 @@ Import the `.reg` file of choice, e.g. `regedit /s solarized-dark.reg`.
 
 Both files contain the same palettes, the only difference is the default
 foreground and background colors. Therefore you can switch between themes on
-the fly with `color 81` for dark and `color F6` for light.
+the fly with `color 01` for dark and `color F6` for light.
 
 If you're using these themes with PowerShell (especially the light), I
 recommend updating the default error and warning colors in your profile at
