@@ -11,6 +11,13 @@ or the main [Solarized repository][3].
 
 Inspired by this [post][4]
 
+WARNING
+-------
+Below are very simplified installation instructions. It **will not** update
+existing shortcuts because they have their own color mapping. It **will not**
+always play nice with traditional unix tools or compatability shims because
+Windows uses a fundamentally different color code mapping.
+
 Installation
 ------------
 
