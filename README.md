@@ -28,6 +28,18 @@ each to "White"/"Black" for light/dark respectively should do the trick, e.g.
     $Host.PrivateData.DebugBackgroundColor = "Black"
     $Host.PrivateData.ErrorBackgroundColor = "Black"
 
+Uninstall
+------------
+
+The file `windows-defaults.reg` is provided to restore the command prompt 
+colors back to their shipping defaults. The registry settings have been 
+checked for versions of Windows back to at least Windows 7 and the values are 
+the same.
+
+To restore the defaults, import the `.reg` the same way as you applied it 
+previously, `regedit /s windows-defaults.reg`. You will also want to revert 
+any changes you made to your `profile.ps1`.
+
 Screenshots
 ------------
 
