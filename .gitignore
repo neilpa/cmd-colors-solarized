@@ -30,6 +30,14 @@ local.properties
 
 
 #################
+## Visual Studio Code
+#################
+
+#  User-specific files
+.vscode/
+
+
+#################
 ## Visual Studio
 #################
 
