@@ -6,24 +6,49 @@ Windows Registry Editor Version 5.00
 ;
 ; Solarized color table from http://ethanschoonover.com/solarized.
 ;
-; NR  cmd.exe      PowerShell   SOLARIZED  HEX      DWORD
-; --  -------      -----------  ---------  -------  --------
-; 00  Black        Black        base03     #002b36  00362b00
-; 01  Blue         DarkBlue     base0      #839496  00969483
-; 02  Green        DarkGreen    base01     #586e75  00756e58
-; 03  Aqua         DarkCyan     base1      #93a1a1  00a1a193
-; 04  Red          DarkRed      orange     #cb4b16  00164bcb
-; 05  Purple       DarkMagenta  violet     #6c71c4  00c4716c
-; 06  Yellow       DarkYellow   base00     #657b83  00837b65
-; 07  White        Gray         base2      #eee8d5  00d5e8ee
-; 08  Gray         DarkGray     base02     #073642  00423607
-; 09  LightBlue    Blue         blue       #268bd2  00d28b26
-; 10  LightGreen   Green        green      #859900  00009985
-; 11  LightAqua    Cyan         cyan       #2aa198  0098a12a
-; 12  LightRed     Red          red        #dc322f  002f32dc
-; 13  LightPurple  Magenta      magenta    #d33682  008236d3
-; 14  LightYellow  Yellow       yellow     #b58900  000089b5
-; 15  BrightWhite  White        base3      #fdf6e3  00e3f6fd
+;| PuTTY Code | PuTTY Color             |
+;|------------|-------------------------|
+;| Colour0    | Default Foreground      |
+;| Colour1    | Default Foreground Bold |
+;| Colour2    | Default Background      |
+;| Colour3    | Default Background Bold |
+;| Colour4    | Cursor Text             |
+;| Colour5    | Cursor Color            |
+;| Colour6    | ANSI Black              |
+;| Colour7    | ANSI Black Bold         |
+;| Colour8    | ANSI Red                |
+;| Colour9    | ANSI Red Bold           |
+;| Colour10   | ANSI Green              |
+;| Colour11   | ANSI Green Bold         |
+;| Colour12   | ANSI Yellow             |
+;| Colour13   | ANSI Yellow Bold        |
+;| Colour14   | ANSI Blue               |
+;| Colour15   | ANSI Blue Bold          |
+;| Colour16   | ANSI Magenta            |
+;| Colour17   | ANSI Magenta Bold       |
+;| Colour18   | ANSI Cyan               |
+;| Colour19   | ANSI Cyan Bold          |
+;| Colour20   | ANSI White              |
+;| Colour21   | ANSI White Bold         |
+;
+;| NR | TERMCOL   | cmd.exe     | PowerShell  | PuTTY                       | SOLARIZED | HEX     | DWORD    | ANSI      |
+;|----|-----------|-------------|-------------|-----------------------------|-----------|---------|----------|-----------|
+;| 00 | brblack   | Black       | Black       | Colour7 / Colour2 / Colour4 | base03    | #002b36 | 00362b00 | ESC[0;30m |
+;| 01 | brblue    | Blue        | DarkBlue    | Colour15 / Colour0          | base0     | #839496 | 00969483 | ESC[0;34m |
+;| 02 | brgreen   | Green       | DarkGreen   | Colour11                    | base01    | #586e75 | 00756e58 | ESC[0;32m |
+;| 03 | brcyan    | Aqua        | DarkCyan    | Colour19 / Colour1          | base1     | #93a1a1 | 00a1a193 | ESC[0;36m |
+;| 04 | brred     | Red         | DarkRed     | Colour9                     | orange    | #cb4b16 | 00164bcb | ESC[0;31m |
+;| 05 | brmagenta | Purple      | DarkMagenta | Colour17                    | violet    | #6c71c4 | 00c4716c | ESC[0;35m |
+;| 06 | bryellow  | Yellow      | DarkYellow  | Colour13                    | base00    | #657b83 | 00837b65 | ESC[0;33m |
+;| 07 | white     | White       | Gray        | Colour20 / Colour5          | base2     | #eee8d5 | 00d5e8ee | ESC[0;37m |
+;| 08 | black     | Gray        | DarkGray    | Colour6 / Colour3           | base02    | #073642 | 00423607 | ESC[1;30m |
+;| 09 | blue      | LightBlue   | Blue        | Colour14                    | blue      | #268bd2 | 00d28b26 | ESC[1;34m |
+;| 10 | green     | LightGreen  | Green       | Colour10                    | green     | #859900 | 00009985 | ESC[1;32m |
+;| 11 | cyan      | LightAqua   | Cyan        | Colour18                    | cyan      | #2aa198 | 0098a12a | ESC[1;36m |
+;| 12 | red       | LightRed    | Red         | Colour8                     | red       | #dc322f | 002f32dc | ESC[1;31m |
+;| 13 | magenta   | LightPurple | Magenta     | Colour16                    | magenta   | #d33682 | 008236d3 | ESC[1;35m |
+;| 14 | yellow    | LightYellow | Yellow      | Colour12                    | yellow    | #b58900 | 000089b5 | ESC[1;33m |
+;| 15 | brwhite   | BrightWhite | White       | Colour21                    | base3     | #fdf6e3 | 00e3f6fd | ESC[1;37m |
 ;
 
 [HKEY_CURRENT_USER\Console]
@@ -45,3 +70,12 @@ Windows Registry Editor Version 5.00
 "ColorTable15"=dword:00e3f6fd
 "ScreenColors"=dword:00000001
 "PopupColors"=dword:000000f6
+
+;| SOLARIZED | HEX     | Role                        |
+;|-----------|---------|-----------------------------|
+;| base03    | #002b36 | Dark Background             |
+;| base02    | #073642 | Dark Background Highlights  |
+;| base00    | #657b83 | Light Foreground Text       |
+;| base0     | #839496 | Dark Foreground Text        |
+;| base2     | #eee8d5 | Light Background Highlights |
+;| base3     | #fdf6e3 | Light Background            |

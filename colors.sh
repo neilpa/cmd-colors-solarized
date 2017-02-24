@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # solarized ansicolors (exporting for grins)
-export base03='\033[1;30;40m'
-export base02='\033[0;30;40m'
+export base03='\033[0;30;40m'
+export base02='\033[1;30;40m'
 export base01='\033[0;32;40m'
 export base00='\033[0;33;40m'
 export base0='\033[0;34;40m'
@@ -14,7 +14,7 @@ export orange='\033[0;31;40m'
 export red='\033[1;31;40m'
 export magenta='\033[1;35;40m'
 export violet='\033[0;35;40m'
-export export blue='\033[1;34;40m'
+export blue='\033[1;34;40m'
 export cyan='\033[1;36;40m'
 export green='\033[1;32;40m'
 export reset='\033[0m'
