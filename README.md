@@ -41,6 +41,14 @@ sequences to show the same in ANSI supported terminals. The PowerShell default
 colors are also matched for the $Host.PrivateData and PSReadLine to make them 
 seemingly fit with the rest of the environments.
 
+WARNING
+-------
+
+Below are very simplified installation instructions. It **will not** update
+existing shortcuts because they have their own color mapping. It **will not**
+always play nice with traditional unix tools or compatability shims because
+Windows uses a fundamentally different color code mapping.
+
 Installation
 ------------
 
