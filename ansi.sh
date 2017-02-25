@@ -2,7 +2,7 @@
 
 
 ansicolors () {
-  for attr in 0 1 4 5 7 ; do
+  for attr in 0 1 4 7; do
     echo "------------------------------------------------"
     printf "ESC[%s;Foreground;Background - \n" $attr
     for fore in 30 31 32 33 34 35 36 37; do
