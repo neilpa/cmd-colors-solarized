@@ -76,6 +76,11 @@ To restore the defaults, import the `.reg` the same way as you applied it
 previously, `regedit /s windows-defaults.reg`. You will also want to revert 
 any changes you made to your PowerShell profile.
 
+__Note:__ the files `solarized-dark.reg` and `solarized-light.reg` are
+incompatible with command-line applications that use the Solarized
+palette (such as VIM). For correct colors, import either
+`solarized-dark-compatible.reg` or `solarized-light-compatible.reg`.
+
 Screenshots
 ------------
 
