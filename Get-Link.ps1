@@ -436,7 +436,7 @@ namespace Huddled.Interop
       {
          set
          {
-            _ScreenFill &= 0x00ff;
+            _ScreenFill &= 0x000f;
             _ScreenFill += (ushort)(value << 4);
          }
 
@@ -446,7 +446,7 @@ namespace Huddled.Interop
       {
          set
          {
-            _ScreenFill &= 0xff00;
+            _ScreenFill &= 0x00f0;
             _ScreenFill += value;
          }
 
@@ -456,7 +456,7 @@ namespace Huddled.Interop
       {
          set
          {
-            _PopUpFill &= 0x00ff;
+            _PopUpFill &= 0x000f;
             _PopUpFill += (ushort)(value << 4);
          }
       }
@@ -465,7 +465,7 @@ namespace Huddled.Interop
       {
          set
          {
-            _PopUpFill &= 0xff00;
+            _PopUpFill &= 0x00f0;
             _PopUpFill += value;
          }
       }
