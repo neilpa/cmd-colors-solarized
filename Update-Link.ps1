@@ -5,7 +5,7 @@ param(
 
     [Parameter()]
     [ValidateSet('Light','Dark')]
-    [string]$Theme
+    [string]$Theme = 'Dark'
 )
 
 $lnk = & ("$PSScriptRoot\Get-Link.ps1") $Path

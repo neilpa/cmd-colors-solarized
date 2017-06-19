@@ -308,6 +308,8 @@ namespace Huddled.Interop
             _ConsoleProperties.dwScreenBufferSize.X = 120;
             _ConsoleProperties.dwScreenBufferSize.Y = 8000;
 
+            _ConsoleProperties.bQuickEdit = true;
+
             _ConsoleProperties.bAutoPosition = true;
 
             for (int i = 0; i < 16; i++)
