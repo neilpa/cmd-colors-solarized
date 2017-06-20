@@ -293,13 +293,25 @@ namespace Huddled.Interop
             ((IPersistFile)_ShellLink).Save(Path, true);
          }
 
-         // Initialize default Console Properties (TODO: Fix this bug too)
+         // TODO: Don't fake it, pull these values from the Registry
+         // Initialize default Console Properties
          if (_ConsoleProperties.dwSignature != 0xA0000002)
          {
             _ConsoleProperties = new NT_CONSOLE_PROPS();
             _ConsoleProperties.cbSize = Marshal.SizeOf(_ConsoleProperties);
             _ConsoleProperties.dwSignature = 0xA0000002;
             _ConsoleProperties.ColorTable = new uint[16];
+
+            _ConsoleProperties.dwWindowSize.X = 120;
+            _ConsoleProperties.dwWindowSize.Y = 30;
+
+            _ConsoleProperties.dwScreenBufferSize.X = 120;
+            _ConsoleProperties.dwScreenBufferSize.Y = 8000;
+
+            _ConsoleProperties.bQuickEdit = true;
+
+            _ConsoleProperties.bAutoPosition = true;
+
             for (int i = 0; i < 16; i++)
             {
                _ConsoleProperties.ColorTable[i] = 0xffffffff;
@@ -406,18 +418,14 @@ namespace Huddled.Interop
 
       public void SetScreenBufferSize(short x, short y)
       {
-         COORD c = new COORD();
-         c.X = x;
-         c.Y = y;
-         _ConsoleProperties.dwScreenBufferSize = c;
+         _ConsoleProperties.dwScreenBufferSize.X = x;
+         _ConsoleProperties.dwScreenBufferSize.Y = y;
       }
 
       public void SetWindowSize(short x, short y)
       {
-         COORD c = new COORD();
-         c.X = x;
-         c.Y = y;
-         _ConsoleProperties.dwWindowSize = c;
+         _ConsoleProperties.dwWindowSize.X = x;
+         _ConsoleProperties.dwWindowSize.Y = y;
       }
 
       public uint CommandHistoryBufferSize
@@ -436,27 +444,25 @@ namespace Huddled.Interop
       {
          set
          {
-            _ScreenFill &= 0x00ff;
+            _ScreenFill &= 0x000f;
             _ScreenFill += (ushort)(value << 4);
          }
-
       }
 
       public byte ScreenTextColor
       {
          set
          {
-            _ScreenFill &= 0xff00;
+            _ScreenFill &= 0x00f0;
             _ScreenFill += value;
          }
-
       }
 
       public byte PopUpBackgroundColor
       {
          set
          {
-            _PopUpFill &= 0x00ff;
+            _PopUpFill &= 0x000f;
             _PopUpFill += (ushort)(value << 4);
          }
       }
@@ -465,7 +471,7 @@ namespace Huddled.Interop
       {
          set
          {
-            _PopUpFill &= 0xff00;
+            _PopUpFill &= 0x00f0;
             _PopUpFill += value;
          }
       }
