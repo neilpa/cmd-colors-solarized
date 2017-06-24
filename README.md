@@ -2,7 +2,8 @@ Solarized - Command Prompt theme
 =============================================
 
 This is a [Solarized][1] color scheme for the Windows command prompt,
-with major contributions by Neil Pankey and Ryan Beesley.
+with contributions by Neil Pankey, Ryan Beesley, Scott Hanselman,
+Russell West, and Paul Hampson.
 
 See the [Solarized home page][1] for screenshots and more details,
 as well as color schemes for other applications. To contribute or file bug
@@ -11,8 +12,8 @@ or the main [Solarized repository][3].
 
 Inspired by this [post][4]
 
-Making Solarized work for cmd.exe, Bash on Ubuntu on Windows, and PowerShell, 
-and striking a balance with how other Solarized projects are implemented 
+Making Solarized work for cmd.exe, Bash on Ubuntu on Windows, and PowerShell,
+and striking a balance with how other Solarized projects are implemented
 presents some challenges. The following table shows how the colors are mapped.
 
 | SOLARIZED | HEX     | ANSI      | TERMCOL   | cmd.exe     | PowerShell  | ColorTable | DWORD    |
@@ -34,23 +35,31 @@ presents some challenges. The following table shows how the colors are mapped.
 | cyan      | #2aa198 | ESC[1;36m | cyan      | LightAqua   | Cyan        | 11         | 0098a12a |
 | green     | #859900 | ESC[1;32m | green     | LightGreen  | Green       | 10         | 00009985 |
 
-To make sure that the terminal is likely to use the best matching, the 
-ColorTable is aligned with TERMCOL values. These values were pulled from PuTTY 
-and other Solarized terminal profiles. This allows the same ANSI escape 
-sequences to show the same in ANSI supported terminals. The PowerShell default 
-colors are also matched for the $Host.PrivateData and PSReadLine to make them 
+To make sure that the terminal is likely to use the best matching, the
+ColorTable is aligned with TERMCOL values. These values were pulled from PuTTY
+and other Solarized terminal profiles. This allows the same ANSI escape
+sequences to show the same in ANSI supported terminals. The PowerShell default
+colors are also matched for the $Host.PrivateData and PSReadLine to make them
 seemingly fit with the rest of the environments.
 
 WARNING
 -------
 
-Below are very simplified installation instructions. It **will not** update
-existing shortcuts because they have their own color mapping. It **will not**
-always play nice with traditional unix tools or compatability shims because
-Windows uses a fundamentally different color code mapping.
+Below are very simplified installation instructions. ~~It **will not** update
+existing shortcuts because they have their own color mapping.~~ With this
+latest version of the project, it is possible to apply to existing shortcuts,
+but it **will not** be easy to revert that change. It **will not** always play
+nice with traditional unix tools or compatability shims because Windows uses a
+fundamentally different color code mapping.
 
 Installation
 ------------
+
+### Update Registry for Console
+While this was the original process, this only changes the registry default
+and doesn't update the Command Prompt and PowerShell defaults when you launch
+those shortcuts. It is still something you may wish to do, but the recommended
+process is now to use the Update-Link utility.
 
 Import the `.reg` file of choice, e.g. `regedit /s solarized-dark.reg`.
 
@@ -58,8 +67,26 @@ Both files contain the same palettes, the only difference is the default
 foreground and background colors. Therefore you can switch between themes on
 the fly with `color 01` for dark and `color F6` for light.
 
-Copy the `Set-Solarized*ColorDefaults.ps1` files to your profile directory, 
-likely `~\Documents\WindowsPowerShell\`. Then add the following line of code 
+### Update Command Prompt and PowerShell shortcut .lnks
+Locate the link you wish to modify, such as Command Prompt. The easiest way to
+do this on Windows 10 is to click `Start`, then type in the command you want to
+change. When it appears in the list, right-click and select `Open file
+location`. This will open an Explorer window and show you the shortcut. Hold
+shift and right-click on the shortcut, then select `Copy as path`. Now open a
+Command Prompt to the location of this project. In the Command Prompt window
+use this command.
+
+    Update-Link "<shortcut.lnk>" [dark|light]
+
+The path to the shortcut.lnk is the same as you copied to your clipboard in the
+previous step. To easily paste it in Windows 10, just right-click on the
+window. If the path has spaces, you will want to wrap it in quotes, but if you
+followed the recommended way to use `Copy as path`, it will be done for you. If
+no theme is given, `Update-Link` will default to Solarized Dark.
+
+### Update your PowerShell profile
+Copy the `Set-Solarized*ColorDefaults.ps1` files to your profile directory,
+likely `~\Documents\WindowsPowerShell\`. Then add the following line of code
 to the end of your `Microsoft.PowerShell_profile.ps1` or `profile.ps1`:
 
     . (Join-Path -Path (Split-Path -Parent -Path $PROFILE) -ChildPath $(switch($HOST.UI.RawUI.BackgroundColor.ToString()){'White'{'Set-SolarizedLightColorDefaults.ps1'}'Black'{'Set-SolarizedDarkColorDefaults.ps1'}default{return}}))
@@ -67,25 +94,48 @@ to the end of your `Microsoft.PowerShell_profile.ps1` or `profile.ps1`:
 Uninstall
 ------------
 
-The file `windows-defaults.reg` is provided to restore the command prompt 
-colors back to their shipping defaults. The registry settings have been 
-checked for versions of Windows back to at least Windows 7 and the values are 
+### Registry for Console
+The file `windows-defaults.reg` is provided to restore the command prompt
+colors back to their shipping defaults. The registry settings have been
+checked for versions of Windows back to at least Windows 7 and the values are
 the same.
 
-To restore the defaults, import the `.reg` the same way as you applied it 
-previously, `regedit /s windows-defaults.reg`. You will also want to revert 
-any changes you made to your PowerShell profile.
+To restore the defaults, import the `.reg` the same way as you applied it
+previously, `regedit /s windows-defaults.reg`.
+
+### Command Prompt and PowerShell shortcut .lnks
+Unfortunately, this is not the easiest to revert right now. One way, which is
+not recommended for casual users is to edit the `Properties` of an open window.
+From there, you can edit the colors manually, using the table as a guide. If
+there is enough interest and demand, a future update may make it possible to
+apply other themes using the `Update-Link` utility, but for now it is not very
+easy to revert.
+
+### PowerShell profile
+You will also want to revert any changes you made to your PowerShell profile.
+Just open the profile you created or modified and remove the code.
 
 Screenshots
 ------------
 
-![Dark prompt][5]
+### PowerShell Light
+![PowerShell Light prompt][5]
 
-![Light prompt][6]
+### PowerShell Dark
+![PowerShell Dark prompt][6]
+
+And for comparison purposes:
+### PowerShell Default
+![PowerShell Default prompt][7]
+
+### Command Prompt Default
+![Command Prompt Default prompt][8]
 
 [1]: http://ethanschoonover.com/solarized
 [2]: https://github.com/neilpa/cmd-colors-solarized
 [3]: https://github.com/altercation/solarized
 [4]: https://github.com/altercation/solarized/issues/127
-[5]: https://raw.github.com/neilpa/cmd-colors-solarized/master/cmd-dark.png
-[6]: https://raw.github.com/neilpa/cmd-colors-solarized/master/cmd-light.png
+[5]: https://raw.github.com/neilpa/cmd-colors-solarized/master/PowerShell-light.png
+[6]: https://raw.github.com/neilpa/cmd-colors-solarized/master/PowerShell-dark.png
+[7]: https://raw.github.com/neilpa/cmd-colors-solarized/master/PowerShell-default.png
+[8]: https://raw.github.com/neilpa/cmd-colors-solarized/master/cmd-default.png
