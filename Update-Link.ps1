@@ -11,22 +11,22 @@ param(
 $lnk = & ("$PSScriptRoot\Get-Link.ps1") $Path
 
 # Set Common Solarized Colors
-$lnk.ConsoleColors[0]="#002b36"
-$lnk.ConsoleColors[8]="#073642"
-$lnk.ConsoleColors[2]="#586e75"
-$lnk.ConsoleColors[6]="#657b83"
-$lnk.ConsoleColors[1]="#839496"
-$lnk.ConsoleColors[3]="#93a1a1"
-$lnk.ConsoleColors[7]="#eee8d5"
+$lnk.ConsoleColors[00]="#073642"
+$lnk.ConsoleColors[01]="#268bd2"
+$lnk.ConsoleColors[02]="#859900"
+$lnk.ConsoleColors[03]="#2aa198"
+$lnk.ConsoleColors[04]="#dc322f"
+$lnk.ConsoleColors[05]="#d33682"
+$lnk.ConsoleColors[06]="#b58900"
+$lnk.ConsoleColors[07]="#eee8d5"
+$lnk.ConsoleColors[08]="#002b36"
+$lnk.ConsoleColors[09]="#839496"
+$lnk.ConsoleColors[10]="#586e75"
+$lnk.ConsoleColors[11]="#93a1a1"
+$lnk.ConsoleColors[12]="#cb4b16"
+$lnk.ConsoleColors[13]="#6c71c4"
+$lnk.ConsoleColors[14]="#657b83"
 $lnk.ConsoleColors[15]="#fdf6e3"
-$lnk.ConsoleColors[14]="#b58900"
-$lnk.ConsoleColors[4]="#cb4b16"
-$lnk.ConsoleColors[12]="#dc322f"
-$lnk.ConsoleColors[13]="#d33682"
-$lnk.ConsoleColors[5]="#6c71c4"
-$lnk.ConsoleColors[9]="#268bd2"
-$lnk.ConsoleColors[11]="#2aa198"
-$lnk.ConsoleColors[10]="#859900"
 
 # Set Light/Dark Theme-Specific Colors
 if ($Theme -eq "Dark") {

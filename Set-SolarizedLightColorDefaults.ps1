@@ -1,35 +1,35 @@
 # Host Foreground
-$Host.PrivateData.ErrorForegroundColor = 'Red'
-$Host.PrivateData.WarningForegroundColor = 'Yellow'
-$Host.PrivateData.DebugForegroundColor = 'Green'
-$Host.PrivateData.VerboseForegroundColor = 'Blue'
+$Host.PrivateData.ErrorForegroundColor = 'DarkRed'
+$Host.PrivateData.WarningForegroundColor = 'DarkYellow'
+$Host.PrivateData.DebugForegroundColor = 'DarkGreen'
+$Host.PrivateData.VerboseForegroundColor = 'DarkBlue'
 $Host.PrivateData.ProgressForegroundColor = 'Gray'
 
 # Host Background
-$Host.PrivateData.ErrorBackgroundColor = 'Gray'
-$Host.PrivateData.WarningBackgroundColor = 'Gray'
-$Host.PrivateData.DebugBackgroundColor = 'Gray'
-$Host.PrivateData.VerboseBackgroundColor = 'Gray'
-$Host.PrivateData.ProgressBackgroundColor = 'Cyan'
+$Host.PrivateData.ErrorBackgroundColor = 'Black'
+$Host.PrivateData.WarningBackgroundColor = 'Black'
+$Host.PrivateData.DebugBackgroundColor = 'Black'
+$Host.PrivateData.VerboseBackgroundColor = 'Black'
+$Host.PrivateData.ProgressBackgroundColor = 'DarkCyan'
 
 # Check for PSReadline
 if (Get-Module -ListAvailable -Name "PSReadline") {
     $options = Get-PSReadlineOption
 
     # Foreground
-    $options.CommandForegroundColor = 'Yellow'
-    $options.ContinuationPromptForegroundColor = 'DarkYellow'
-    $options.DefaultTokenForegroundColor = 'DarkYellow'
-    $options.EmphasisForegroundColor = 'Cyan'
-    $options.ErrorForegroundColor = 'Red'
-    $options.KeywordForegroundColor = 'Green'
-    $options.MemberForegroundColor = 'DarkGreen'
-    $options.NumberForegroundColor = 'DarkGreen'
-    $options.OperatorForegroundColor = 'DarkCyan'
-    $options.ParameterForegroundColor = 'DarkCyan'
-    $options.StringForegroundColor = 'Blue'
-    $options.TypeForegroundColor = 'DarkBlue'
-    $options.VariableForegroundColor = 'Green'
+    $options.CommandForegroundColor = 'DarkYellow'
+    $options.ContinuationPromptForegroundColor = 'Yellow'
+    $options.DefaultTokenForegroundColor = 'Yellow'
+    $options.EmphasisForegroundColor = 'DarkCyan'
+    $options.ErrorForegroundColor = 'DarkRed'
+    $options.KeywordForegroundColor = 'DarkGreen'
+    $options.MemberForegroundColor = 'Green'
+    $options.NumberForegroundColor = 'Green'
+    $options.OperatorForegroundColor = 'Cyan'
+    $options.ParameterForegroundColor = 'Cyan'
+    $options.StringForegroundColor = 'DarkBlue'
+    $options.TypeForegroundColor = 'Blue'
+    $options.VariableForegroundColor = 'DarkGreen'
 
     # Background
     $options.CommandBackgroundColor = 'White'

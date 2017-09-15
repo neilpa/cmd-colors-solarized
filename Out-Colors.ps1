@@ -2,22 +2,22 @@
 
 # Map the Solarized colors to their ColorTable pairings
 $SolarizedPallet = [ordered]@{
-    'base03' = 'Black'
-    'base02' = 'DarkGray'
-    'base01' = 'DarkGreen'
-    'base00' = 'DarkYellow'
-    'base0' = 'DarkBlue'
-    'base1' = 'DarkCyan'
+    'base03' = 'DarkGray'
+    'base02' = 'Black'
+    'base01' = 'Green'
+    'base00' = 'Yellow'
+    'base0' = 'Blue'
+    'base1' = 'Cyan'
     'base2' = 'Gray'
     'base3' = 'White'
-    'yellow' = 'Yellow'
-    'orange' = 'DarkRed'
-    'red' = 'Red'
-    'magenta' = 'Magenta'
-    'violet' = 'DarkMagenta'
-    'blue' = 'Blue'
-    'cyan' = 'Cyan'
-    'green' = 'Green'
+    'yellow' = 'DarkYellow'
+    'orange' = 'Red'
+    'red' = 'DarkRed'
+    'magenta' = 'DarkMagenta'
+    'violet' = 'Magenta'
+    'blue' = 'DarkBlue'
+    'cyan' = 'DarkCyan'
+    'green' = 'DarkGreen'
 }
 $PalletSolarized = @{} # Will be used to invert the mapping
 
