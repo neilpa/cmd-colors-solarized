@@ -17,5 +17,5 @@ Windows Registry Editor Version 5.00
 "ColorTable13"=dword:00ff00ff
 "ColorTable14"=dword:0000ffff
 "ColorTable15"=dword:00ffffff
-"ScreenColors"=dword:00000007
+"ScreenColors"=dword:0000000a
 "PopupColors"=dword:000000f5
