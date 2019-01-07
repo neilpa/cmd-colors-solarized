@@ -14,35 +14,19 @@ $Host.PrivateData.ProgressBackgroundColor = 'Cyan'
 
 # Check for PSReadline
 if (Get-Module -ListAvailable -Name "PSReadline") {
-    $options = Get-PSReadlineOption
-
-    # Foreground
-    $options.CommandForegroundColor = 'Yellow'
-    $options.ContinuationPromptForegroundColor = 'DarkBlue'
-    $options.DefaultTokenForegroundColor = 'DarkBlue'
-    $options.EmphasisForegroundColor = 'Cyan'
-    $options.ErrorForegroundColor = 'Red'
-    $options.KeywordForegroundColor = 'Green'
-    $options.MemberForegroundColor = 'DarkCyan'
-    $options.NumberForegroundColor = 'DarkCyan'
-    $options.OperatorForegroundColor = 'DarkGreen'
-    $options.ParameterForegroundColor = 'DarkGreen'
-    $options.StringForegroundColor = 'Blue'
-    $options.TypeForegroundColor = 'DarkYellow'
-    $options.VariableForegroundColor = 'Green'
-
-    # Background
-    $options.CommandBackgroundColor = 'Black'
-    $options.ContinuationPromptBackgroundColor = 'Black'
-    $options.DefaultTokenBackgroundColor = 'Black'
-    $options.EmphasisBackgroundColor = 'Black'
-    $options.ErrorBackgroundColor = 'Black'
-    $options.KeywordBackgroundColor = 'Black'
-    $options.MemberBackgroundColor = 'Black'
-    $options.NumberBackgroundColor = 'Black'
-    $options.OperatorBackgroundColor = 'Black'
-    $options.ParameterBackgroundColor = 'Black'
-    $options.StringBackgroundColor = 'Black'
-    $options.TypeBackgroundColor = 'Black'
-    $options.VariableBackgroundColor = 'Black'
+    Set-PSReadLineOption -Colors @{ 
+        "Command"            = [ConsoleColor]::Yellow
+        "ContinuationPrompt" = [ConsoleColor]::DarkBlue
+        "DefaultToken"       = [ConsoleColor]::DarkBlue
+        "Emphasis"           = [ConsoleColor]::Cyan
+        "Error"              = [ConsoleColor]::Red
+        "Keyword"            = [ConsoleColor]::Green
+        "Member"             = [ConsoleColor]::DarkCyan
+        "Number"             = [ConsoleColor]::DarkCyan
+        "Operator"           = [ConsoleColor]::DarkGreen
+        "Parameter"          = [ConsoleColor]::DarkGreen
+        "String"             = [ConsoleColor]::Blue
+        "Type"               = [ConsoleColor]::DarkYellow
+        "Variable"           = [ConsoleColor]::Green
+    }
 }
