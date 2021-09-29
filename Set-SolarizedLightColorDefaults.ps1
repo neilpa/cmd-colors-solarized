@@ -14,8 +14,7 @@ $Host.PrivateData.ProgressBackgroundColor = 'Cyan'
 
 # Check for PSReadline
 if (Get-Module -ListAvailable -Name "PSReadline") {
-    $options = Get-PSReadlineOption
-
+    if (-not $options){ $options = Get-PSReadlineOption }
 	if ([System.Version](Get-Module PSReadline).Version -lt [System.Version]"2.0.0") {
 		# Foreground
 		$options.CommandForegroundColor = 'Yellow'
